@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80" style="background: transparent;">
+  <!-- X Icon -->
+  <g>
+    <!-- Person icon on top -->
+    <circle cx="30" cy="15" r="6" fill="#2563eb"/>
+    
+    <!-- X shape made of overlapping rounded rectangles -->
+    <ellipse cx="20" cy="35" rx="12" ry="18" fill="#3b82f6" transform="rotate(-25 20 35)"/>
+    <ellipse cx="40" cy="35" rx="12" ry="18" fill="#60a5fa" transform="rotate(25 40 35)"/>
+    <ellipse cx="30" cy="45" rx="12" ry="18" fill="#1d4ed8"/>
+  </g>
+  
+  <!-- Flexa Text -->
+  <text x="80" y="35" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#1e40af">Flexa</text>
+  
+  <!-- Digital Text -->
+  <text x="80" y="55" font-family="Arial, sans-serif" font-size="14" fill="#64748b">Digital</text>
+</svg>
