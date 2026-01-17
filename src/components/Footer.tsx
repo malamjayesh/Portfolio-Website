@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { navigationConfig } from "@/config/navigation";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
-import { motion } from "framer-motion";
-import { 
-  ArrowRight, 
-  Mail, 
-  Phone, 
-  MapPin, 
+import Link from 'next/link';
+import { navigationConfig } from '@/config/navigation';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Badge } from '@/components/ui/badge';
+import { motion } from 'framer-motion';
+import {
+  ArrowRight,
+  Mail,
+  Phone,
+  MapPin,
   Instagram,
   Facebook,
   Linkedin,
@@ -18,42 +18,44 @@ import {
   Shield,
   Zap,
   Globe,
-  Send
-} from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa";
-import logo from "@/assets/flexa-digital.png";
+  Send,
+} from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
+import logo from '@/assets/flexa-digital.png';
 
 const Footer = () => {
   return (
     <footer className="relative bg-gradient-to-br from-background via-secondary/50 to-background border-t border-border overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5" />
-      
+
       {/* Main Footer Content */}
       <div className="relative z-10">
         {/* Newsletter Section */}
         <div className="border-b border-border/50">
           <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               className="max-w-4xl mx-auto text-center"
             >
-              <Badge variant="outline" className="mb-4">Stay Updated</Badge>
+              <Badge variant="outline" className="mb-4">
+                Stay Updated
+              </Badge>
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
                 Get the latest insights & updates
               </h3>
               <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 sm:mb-8 px-4">
-                Join 10,000+ tech leaders getting our weekly newsletter with industry insights, 
-                case studies, and exclusive content.
+                Join 10,000+ tech leaders getting our weekly newsletter with
+                industry insights, case studies, and exclusive content.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-md mx-auto px-4">
-                <Input 
-                  type="email" 
-                  placeholder="Enter your email" 
+                <Input
+                  type="email"
+                  placeholder="Enter your email"
                   className="flex-1 bg-card/50 border-border"
                 />
                 <Button className="bg-gradient-primary hover:shadow-glow transition-all duration-300 group">
@@ -61,7 +63,7 @@ const Footer = () => {
                   <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </div>
-              
+
               <p className="text-xs text-muted-foreground mt-4">
                 No spam. Unsubscribe anytime. Read our privacy policy.
               </p>
@@ -75,14 +77,18 @@ const Footer = () => {
             {/* Company Info */}
             <div className="sm:col-span-2 lg:col-span-2">
               <Link href="/" className="inline-block mb-6">
-                <img src={logo.src} alt="Flexa Digital" className="h-10 sm:h-12 w-auto" />
+                <img
+                  src={logo.src}
+                  alt="Flexa Digital"
+                  className="h-10 sm:h-12 w-auto"
+                />
               </Link>
               {/* <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 leading-relaxed">
                 We're a product studio that builds exceptional digital experiences. 
                 From startups to Fortune 500 companies, we deliver scalable solutions 
                 that drive real business results.
               </p> */}
-              
+
               {/* Contact Info */}
               <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
                 <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm">
@@ -95,18 +101,37 @@ const Footer = () => {
                 </div>
                 <div className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm">
                   <MapPin className="h-3 w-3 sm:h-4 sm:w-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span>B-623 RK Iconic, Shital Park Rajkot,<br className="hidden sm:block" /> Gujarat 360006, India</span>
+                  <span>
+                    B-623 RK Iconic, Shital Park Rajkot,
+                    <br className="hidden sm:block" /> Gujarat 360006, India
+                  </span>
                 </div>
               </div>
 
               {/* Social Links */}
               <div className="flex gap-3 sm:gap-4">
                 {[
-                  { icon: Instagram, href: "https://www.instagram.com/flexadigital.in/", label: "Instagram" },
-                  { icon: Facebook, href: "https://www.facebook.com/", label: "Facebook" },
-                  { icon: Linkedin, href: "https://www.linkedin.com/company/flexadigital", label: "LinkedIn" },
-                  { icon: FaWhatsapp, href: "https://wa.me/99795834289", label: "WhatsApp" }
-                ].map((social) => {
+                  {
+                    icon: Instagram,
+                    href: 'https://www.instagram.com/flexadigital.in/',
+                    label: 'Instagram',
+                  },
+                  {
+                    icon: Facebook,
+                    href: 'https://www.facebook.com/',
+                    label: 'Facebook',
+                  },
+                  {
+                    icon: Linkedin,
+                    href: 'https://www.linkedin.com/company/flexadigital',
+                    label: 'LinkedIn',
+                  },
+                  {
+                    icon: FaWhatsapp,
+                    href: 'https://wa.me/99795834289',
+                    label: 'WhatsApp',
+                  },
+                ].map(social => {
                   const Icon = social.icon;
                   return (
                     <motion.a
@@ -126,12 +151,14 @@ const Footer = () => {
 
             {/* Services */}
             <div>
-              <h4 className="font-bold text-base sm:text-lg mb-4 sm:mb-6">Services</h4>
+              <h4 className="font-bold text-base sm:text-lg mb-4 sm:mb-6">
+                Services
+              </h4>
               <ul className="space-y-2 sm:space-y-3">
-                {navigationConfig.footerNav.services.map((item) => (
+                {navigationConfig.footerNav.services.map(item => (
                   <li key={item.href + item.title}>
-                    <Link 
-                      href={item.href} 
+                    <Link
+                      href={item.href}
                       className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"
                     >
                       <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
@@ -144,12 +171,14 @@ const Footer = () => {
 
             {/* Company */}
             <div>
-              <h4 className="font-bold text-base sm:text-lg mb-4 sm:mb-6">Company</h4>
+              <h4 className="font-bold text-base sm:text-lg mb-4 sm:mb-6">
+                Company
+              </h4>
               <ul className="space-y-2 sm:space-y-3">
-                {navigationConfig.footerNav.company.map((item) => (
+                {navigationConfig.footerNav.company.map(item => (
                   <li key={item.href}>
-                    <Link 
-                      href={item.href} 
+                    <Link
+                      href={item.href}
                       className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"
                     >
                       <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
@@ -162,12 +191,14 @@ const Footer = () => {
 
             {/* Resources & Contact */}
             <div>
-              <h4 className="font-bold text-base sm:text-lg mb-4 sm:mb-6">Resources</h4>
+              <h4 className="font-bold text-base sm:text-lg mb-4 sm:mb-6">
+                Resources
+              </h4>
               <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
-                {navigationConfig.footerNav.contact.map((item) => (
+                {navigationConfig.footerNav.contact.map(item => (
                   <li key={item.href + item.title}>
-                    <Link 
-                      href={item.href} 
+                    <Link
+                      href={item.href}
                       className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"
                     >
                       <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
@@ -176,7 +207,7 @@ const Footer = () => {
                   </li>
                 ))}
               </ul>
-              
+
               {/* Certifications */}
               {/* <div>
                 <h5 className="font-semibold mb-2 sm:mb-3 text-xs sm:text-sm">Certifications</h5>
@@ -207,16 +238,33 @@ const Footer = () => {
               <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-xs sm:text-sm text-muted-foreground text-center sm:text-left">
                 <p>© 2020 FlexaDigital. All rights reserved.</p>
                 <div className="flex items-center gap-3 sm:gap-4">
-                  <Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
-                  <Link href="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
-                  <Link href="/cookies" className="hover:text-primary transition-colors">Cookie Policy</Link>
+                  <Link
+                    href="/privacy"
+                    className="hover:text-primary transition-colors"
+                  >
+                    Privacy Policy
+                  </Link>
+                  <Link
+                    href="/terms"
+                    className="hover:text-primary transition-colors"
+                  >
+                    Terms of Service
+                  </Link>
+                  <Link
+                    href="/cookies"
+                    className="hover:text-primary transition-colors"
+                  >
+                    Cookie Policy
+                  </Link>
                 </div>
               </div>
-              
+
               <div className="flex items-center gap-3 sm:gap-4">
                 <div className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
                   <Globe className="h-3 w-3 sm:h-4 sm:w-4 text-primary" />
-                  <span className="hidden sm:inline">Serving 5+ countries worldwide</span>
+                  <span className="hidden sm:inline">
+                    Serving 5+ countries worldwide
+                  </span>
                   <span className="sm:hidden">Global Service</span>
                 </div>
               </div>

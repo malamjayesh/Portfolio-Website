@@ -1,12 +1,19 @@
-"use client";
+'use client';
 
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Zap, Star, CheckCircle, TrendingUp, Globe } from "lucide-react";
-import Link from "next/link";
-import { motion } from "framer-motion";
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import {
+  ArrowRight,
+  Zap,
+  Star,
+  CheckCircle,
+  TrendingUp,
+  Globe,
+} from 'lucide-react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const NextJS = () => {
   return (
@@ -24,17 +31,23 @@ const NextJS = () => {
               <div className="flex items-center justify-center gap-6 mb-8">
                 <span className="text-8xl">▲</span>
                 <div className="text-left">
-                  <Badge variant="outline" className="text-white border-white/30 bg-white/10 mb-4">
+                  <Badge
+                    variant="outline"
+                    className="text-white border-white/30 bg-white/10 mb-4"
+                  >
                     React Framework
                   </Badge>
                   <h1 className="text-6xl md:text-7xl font-bold">Next.js</h1>
-                  <p className="text-xl opacity-90">Full-Stack React Framework</p>
+                  <p className="text-xl opacity-90">
+                    Full-Stack React Framework
+                  </p>
                 </div>
               </div>
               <p className="text-2xl opacity-90 max-w-4xl mx-auto mb-8">
-                Production-ready React framework with server-side rendering and modern web capabilities
+                Production-ready React framework with server-side rendering and
+                modern web capabilities
               </p>
-              
+
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4">
                   <div className="text-3xl font-bold">200+</div>
@@ -63,29 +76,46 @@ const NextJS = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 {
-                  title: "App Router",
-                  description: "Modern routing with layouts and nested routes",
-                  icon: "🗂️",
-                  benefits: ["File-based routing", "Nested layouts", "Loading states"]
+                  title: 'App Router',
+                  description: 'Modern routing with layouts and nested routes',
+                  icon: '🗂️',
+                  benefits: [
+                    'File-based routing',
+                    'Nested layouts',
+                    'Loading states',
+                  ],
                 },
                 {
-                  title: "Server Actions",
-                  description: "Server-side functions that run on form submissions",
-                  icon: "⚡",
-                  benefits: ["No API routes needed", "Type-safe", "Progressive enhancement"]
+                  title: 'Server Actions',
+                  description:
+                    'Server-side functions that run on form submissions',
+                  icon: '⚡',
+                  benefits: [
+                    'No API routes needed',
+                    'Type-safe',
+                    'Progressive enhancement',
+                  ],
                 },
                 {
-                  title: "Edge Runtime",
-                  description: "Deploy functions closer to users worldwide",
-                  icon: "🌍",
-                  benefits: ["Global deployment", "Low latency", "Automatic scaling"]
+                  title: 'Edge Runtime',
+                  description: 'Deploy functions closer to users worldwide',
+                  icon: '🌍',
+                  benefits: [
+                    'Global deployment',
+                    'Low latency',
+                    'Automatic scaling',
+                  ],
                 },
                 {
-                  title: "Turbopack",
-                  description: "Ultra-fast bundler built in Rust",
-                  icon: "🚀",
-                  benefits: ["10x faster builds", "Incremental compilation", "Better caching"]
-                }
+                  title: 'Turbopack',
+                  description: 'Ultra-fast bundler built in Rust',
+                  icon: '🚀',
+                  benefits: [
+                    '10x faster builds',
+                    'Incremental compilation',
+                    'Better caching',
+                  ],
+                },
               ].map((feature, index) => (
                 <motion.div
                   key={feature.title}
@@ -97,9 +127,11 @@ const NextJS = () => {
                 >
                   <div className="text-4xl mb-4">{feature.icon}</div>
                   <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                  <p className="text-muted-foreground mb-4">{feature.description}</p>
+                  <p className="text-muted-foreground mb-4">
+                    {feature.description}
+                  </p>
                   <div className="space-y-2">
-                    {feature.benefits.map((benefit) => (
+                    {feature.benefits.map(benefit => (
                       <div key={benefit} className="flex items-center gap-2">
                         <CheckCircle className="w-4 h-4 text-primary" />
                         <span className="text-sm">{benefit}</span>
@@ -118,29 +150,30 @@ const NextJS = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 {
-                  title: "SEO Excellence",
-                  description: "Server-side rendering for better search rankings",
+                  title: 'SEO Excellence',
+                  description:
+                    'Server-side rendering for better search rankings',
                   icon: Globe,
-                  metric: "60% better SEO"
+                  metric: '60% better SEO',
                 },
                 {
-                  title: "Performance",
-                  description: "Optimized loading and rendering",
+                  title: 'Performance',
+                  description: 'Optimized loading and rendering',
                   icon: Zap,
-                  metric: "3x faster pages"
+                  metric: '3x faster pages',
                 },
                 {
-                  title: "Developer Experience",
-                  description: "Built-in optimizations and tooling",
+                  title: 'Developer Experience',
+                  description: 'Built-in optimizations and tooling',
                   icon: Star,
-                  metric: "50% faster dev"
+                  metric: '50% faster dev',
                 },
                 {
-                  title: "Scalability",
-                  description: "Handles enterprise-level traffic",
+                  title: 'Scalability',
+                  description: 'Handles enterprise-level traffic',
                   icon: TrendingUp,
-                  metric: "Unlimited scale"
-                }
+                  metric: 'Unlimited scale',
+                },
               ].map((benefit, index) => {
                 const Icon = benefit.icon;
                 return (
@@ -154,8 +187,12 @@ const NextJS = () => {
                   >
                     <Icon className="w-12 h-12 text-primary mx-auto mb-4" />
                     <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
-                    <p className="text-muted-foreground mb-4">{benefit.description}</p>
-                    <div className="text-lg font-bold text-accent">{benefit.metric}</div>
+                    <p className="text-muted-foreground mb-4">
+                      {benefit.description}
+                    </p>
+                    <div className="text-lg font-bold text-accent">
+                      {benefit.metric}
+                    </div>
                   </motion.div>
                 );
               })}
@@ -166,18 +203,29 @@ const NextJS = () => {
         {/* CTA */}
         <section className="py-24 bg-gradient-to-br from-black to-gray-800 text-white">
           <div className="container mx-auto px-6 text-center">
-            <h2 className="text-4xl font-bold mb-6">Ready to Build with Next.js?</h2>
+            <h2 className="text-4xl font-bold mb-6">
+              Ready to Build with Next.js?
+            </h2>
             <p className="text-xl opacity-90 mb-8 max-w-3xl mx-auto">
               Create fast, SEO-friendly applications with the power of Next.js
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-black hover:bg-white/90" asChild>
+              <Button
+                size="lg"
+                className="bg-white text-black hover:bg-white/90"
+                asChild
+              >
                 <Link href="/contact">
                   Start Your Next.js Project
                   <ArrowRight className="ml-2" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" asChild>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white text-white hover:bg-white/10"
+                asChild
+              >
                 <Link href="/case-studies">View Next.js Projects</Link>
               </Button>
             </div>

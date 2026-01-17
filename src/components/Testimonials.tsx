@@ -1,28 +1,31 @@
-"use client";
+'use client';
 
-import { Quote } from "lucide-react";
-import { motion } from "framer-motion";
+import { Quote } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Testimonials = () => {
   const testimonials = [
     {
-      quote: "FlexaDigital turned an idea into a growing product in 14 weeks. Their discipline and communication made the difference.",
-      author: "Asha Patel",
-      position: "Founder",
-      company: "HealthKit"
+      quote:
+        'FlexaDigital turned an idea into a growing product in 14 weeks. Their discipline and communication made the difference.',
+      author: 'Asha Patel',
+      position: 'Founder',
+      company: 'HealthKit',
     },
     {
-      quote: "We saw a 3x lift in lead quality after their SEO and funnel work.",
-      author: "Karan Mehta",
-      position: "Head of Marketing",
-      company: "RetailX"
+      quote:
+        'We saw a 3x lift in lead quality after their SEO and funnel work.',
+      author: 'Karan Mehta',
+      position: 'Head of Marketing',
+      company: 'RetailX',
     },
     {
-      quote: "Reliable delivery, strong engineering and zero surprises—highly recommended.",
-      author: "Rahul Singh",
-      position: "CTO",
-      company: "FinSolve"
-    }
+      quote:
+        'Reliable delivery, strong engineering and zero surprises—highly recommended.',
+      author: 'Rahul Singh',
+      position: 'CTO',
+      company: 'FinSolve',
+    },
   ];
 
   return (
@@ -34,7 +37,9 @@ const Testimonials = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-3 sm:mb-4">What Our Clients Say</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-3 sm:mb-4">
+            What Our Clients Say
+          </h2>
           <p className="text-center text-sm sm:text-base text-muted-foreground mb-10 sm:mb-12 md:mb-16 max-w-2xl mx-auto px-4">
             Real projects. Real outcomes. Real partnerships.
           </p>
@@ -63,25 +68,42 @@ const Testimonials = () => {
                 "{testimonial.quote}"
               </p>
               <div className="border-t border-border pt-4">
-                <h4 className="font-semibold text-base sm:text-lg">{testimonial.author}</h4>
-                <p className="text-xs sm:text-sm text-accent">{testimonial.position}</p>
-                <p className="text-xs sm:text-sm text-muted-foreground">{testimonial.company}</p>
+                <h4 className="font-semibold text-base sm:text-lg">
+                  {testimonial.author}
+                </h4>
+                <p className="text-xs sm:text-sm text-accent">
+                  {testimonial.position}
+                </p>
+                <p className="text-xs sm:text-sm text-muted-foreground">
+                  {testimonial.company}
+                </p>
               </div>
             </motion.div>
           ))}
         </div>
 
         {/* Trusted Companies */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center"
         >
-          <h3 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8">Trusted by Growing Businesses</h3>
+          <h3 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8">
+            Trusted by Growing Businesses
+          </h3>
           <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-4 sm:gap-6 md:gap-8 items-center opacity-60">
-            {['HealthKit', 'RetailX', 'FinSolve', 'CloudNine', 'DataFlow', 'BrandWorks', 'InnovateCo', 'TechVentures'].map((company, i) => (
+            {[
+              'HealthKit',
+              'RetailX',
+              'FinSolve',
+              'CloudNine',
+              'DataFlow',
+              'BrandWorks',
+              'InnovateCo',
+              'TechVentures',
+            ].map((company, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0 }}

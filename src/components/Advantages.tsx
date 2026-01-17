@@ -1,26 +1,29 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import iconMarket from "@/assets/icon-market.png";
-import iconSolutions from "@/assets/icon-solutions.png";
-import iconRocket from "@/assets/icon-rocket.png";
+import Image from 'next/image';
+import iconMarket from '@/assets/icon-market.png';
+import iconSolutions from '@/assets/icon-solutions.png';
+import iconRocket from '@/assets/icon-rocket.png';
 
 const Advantages = () => {
   const advantages = [
-    { 
+    {
       icon: iconMarket,
-      title: "Extensive Market Presence",
-      description: "Operating in over 11 key markets with a combined population of over 1.5B billion, Filuet helps you reach countless potential clients and drives your business growth.",
+      title: 'Extensive Market Presence',
+      description:
+        'Operating in over 11 key markets with a combined population of over 1.5B billion, Filuet helps you reach countless potential clients and drives your business growth.',
     },
     {
       icon: iconSolutions,
-      title: "Comprehensive Solutions",
-      description: "Enjoy a one-stop shop for all your multinational expansion needs, from fulfillment to marketing, we make it easy to scale your operations without any hassle.",
+      title: 'Comprehensive Solutions',
+      description:
+        'Enjoy a one-stop shop for all your multinational expansion needs, from fulfillment to marketing, we make it easy to scale your operations without any hassle.',
     },
     {
       icon: iconRocket,
-      title: "Fast Solutions",
-      description: "Count on our quick turnaround for global expansion projects, often completed in six months or less, ensuring your brand can seize opportunities without delay.",
+      title: 'Fast Solutions',
+      description:
+        'Count on our quick turnaround for global expansion projects, often completed in six months or less, ensuring your brand can seize opportunities without delay.',
     },
   ];
 
@@ -39,15 +42,17 @@ const Advantages = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="mb-6">
-                <Image 
-                  src={advantage.icon} 
+                <Image
+                  src={advantage.icon}
                   alt={advantage.title}
                   className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16"
                   width={64}
                   height={64}
                 />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">{advantage.title}</h3>
+              <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">
+                {advantage.title}
+              </h3>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 {advantage.description}
               </p>

@@ -17,11 +17,13 @@ This is the Next.js version of the Flexa Digital website, converted from the ori
 ## Getting Started
 
 1. Install dependencies:
+
 ```bash
 npm install
 ```
 
 2. Run the development server:
+
 ```bash
 npm run dev
 ```

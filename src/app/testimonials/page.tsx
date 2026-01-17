@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import Testimonials from "@/components/Testimonials";
-import { motion } from "framer-motion";
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import Testimonials from '@/components/Testimonials';
+import { motion } from 'framer-motion';
 
 export default function TestimonialsPage() {
   return (
@@ -13,15 +13,18 @@ export default function TestimonialsPage() {
         {/* Hero Section */}
         <section className="relative min-h-[60vh] flex items-center justify-center bg-gradient-hero pt-32 pb-20">
           <div className="container mx-auto px-6 text-center">
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="text-5xl md:text-6xl font-bold mb-6"
             >
-              Client <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Testimonials</span>
+              Client{' '}
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Testimonials
+              </span>
             </motion.h1>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}

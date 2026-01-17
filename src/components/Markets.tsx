@@ -1,20 +1,20 @@
-"use client";
+'use client';
 
-import Link from "next/link";
+import Link from 'next/link';
 
 const Markets = () => {
   const markets = [
-    { name: "Azerbaijan", flag: "🇦🇿" },
-    { name: "India", flag: "🇮🇳" },
-    { name: "Uzbekistan", flag: "🇺🇿" },
-    { name: "Kazakhstan", flag: "🇰🇿" },
-    { name: "Armenia", flag: "🇦🇲" },
-    { name: "Cyprus", flag: "🇨🇾" },
-    { name: "Israel", flag: "🇮🇱" },
-    { name: "Lithuania", flag: "🇱🇹" },
-    { name: "Latvia", flag: "🇱🇻" },
-    { name: "Estonia", flag: "🇪🇪" },
-    { name: "Georgia", flag: "🇬🇪" },
+    { name: 'Azerbaijan', flag: '🇦🇿' },
+    { name: 'India', flag: '🇮🇳' },
+    { name: 'Uzbekistan', flag: '🇺🇿' },
+    { name: 'Kazakhstan', flag: '🇰🇿' },
+    { name: 'Armenia', flag: '🇦🇲' },
+    { name: 'Cyprus', flag: '🇨🇾' },
+    { name: 'Israel', flag: '🇮🇱' },
+    { name: 'Lithuania', flag: '🇱🇹' },
+    { name: 'Latvia', flag: '🇱🇻' },
+    { name: 'Estonia', flag: '🇪🇪' },
+    { name: 'Georgia', flag: '🇬🇪' },
   ];
 
   return (

@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { ArrowRight, CheckCircle, ExternalLink } from "lucide-react";
-import Link from "next/link";
-import { motion } from "framer-motion";
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { ArrowRight, CheckCircle, ExternalLink } from 'lucide-react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 export default function HealthcareBookingApp() {
   return (
@@ -21,12 +21,15 @@ export default function HealthcareBookingApp() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <Badge variant="outline" className="mb-4">Healthcare App</Badge>
+              <Badge variant="outline" className="mb-4">
+                Healthcare App
+              </Badge>
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
                 Healthcare Booking Platform
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-                HIPAA-compliant mobile app for appointment booking and telemedicine consultations
+                HIPAA-compliant mobile app for appointment booking and
+                telemedicine consultations
               </p>
             </motion.div>
           </div>
@@ -44,9 +47,10 @@ export default function HealthcareBookingApp() {
               >
                 <h2 className="text-4xl font-bold mb-6">Project Overview</h2>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  A comprehensive healthcare mobile application that enables patients to book appointments, 
-                  view medical records, and conduct telemedicine consultations. Built with HIPAA compliance 
-                  and end-to-end encryption for maximum security.
+                  A comprehensive healthcare mobile application that enables
+                  patients to book appointments, view medical records, and
+                  conduct telemedicine consultations. Built with HIPAA
+                  compliance and end-to-end encryption for maximum security.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
@@ -67,7 +71,7 @@ export default function HealthcareBookingApp() {
                   </div>
                 </div>
               </motion.div>
-              
+
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -78,16 +82,26 @@ export default function HealthcareBookingApp() {
                 <h3 className="text-2xl font-bold mb-6">Key Results</h3>
                 <div className="space-y-6">
                   <div>
-                    <div className="text-3xl font-bold text-primary mb-2">50K+</div>
+                    <div className="text-3xl font-bold text-primary mb-2">
+                      50K+
+                    </div>
                     <div className="text-muted-foreground">Active Users</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-primary mb-2">10K+</div>
-                    <div className="text-muted-foreground">Appointments/Month</div>
+                    <div className="text-3xl font-bold text-primary mb-2">
+                      10K+
+                    </div>
+                    <div className="text-muted-foreground">
+                      Appointments/Month
+                    </div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-primary mb-2">4.6/5</div>
-                    <div className="text-muted-foreground">App Store Rating</div>
+                    <div className="text-3xl font-bold text-primary mb-2">
+                      4.6/5
+                    </div>
+                    <div className="text-muted-foreground">
+                      App Store Rating
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -113,10 +127,10 @@ export default function HealthcareBookingApp() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { name: "Flutter", category: "Mobile Framework" },
-                { name: "Node.js", category: "Backend" },
-                { name: "MongoDB", category: "Database" },
-                { name: "AWS", category: "Cloud Platform" }
+                { name: 'Flutter', category: 'Mobile Framework' },
+                { name: 'Node.js', category: 'Backend' },
+                { name: 'MongoDB', category: 'Database' },
+                { name: 'AWS', category: 'Cloud Platform' },
               ].map((tech, index) => (
                 <motion.div
                   key={tech.name}
@@ -127,7 +141,9 @@ export default function HealthcareBookingApp() {
                   className="bg-card border border-border rounded-2xl p-6 text-center"
                 >
                   <h3 className="text-xl font-bold mb-2">{tech.name}</h3>
-                  <p className="text-sm text-muted-foreground">{tech.category}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {tech.category}
+                  </p>
                 </motion.div>
               ))}
             </div>
@@ -137,9 +153,12 @@ export default function HealthcareBookingApp() {
         {/* CTA Section */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-6 text-center">
-            <h2 className="text-4xl font-bold mb-6">Need a Healthcare Solution?</h2>
+            <h2 className="text-4xl font-bold mb-6">
+              Need a Healthcare Solution?
+            </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Let's build a HIPAA-compliant healthcare platform for your organization
+              Let's build a HIPAA-compliant healthcare platform for your
+              organization
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-gradient-primary" asChild>

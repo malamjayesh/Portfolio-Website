@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useEffect } from 'react';
 
@@ -7,17 +7,20 @@ export const usePerformanceMonitor = () => {
     if (typeof window === 'undefined') return;
 
     // Monitor Core Web Vitals
-    const observer = new PerformanceObserver((list) => {
-      list.getEntries().forEach((entry) => {
+    const observer = new PerformanceObserver(list => {
+      list.getEntries().forEach(entry => {
         if (entry.entryType === 'navigation') {
           const navEntry = entry as PerformanceNavigationTiming;
-          console.log('Page Load Time:', navEntry.loadEventEnd - navEntry.fetchStart);
+          console.log(
+            'Page Load Time:',
+            navEntry.loadEventEnd - navEntry.fetchStart
+          );
         }
-        
+
         if (entry.entryType === 'paint') {
           console.log(`${entry.name}:`, entry.startTime);
         }
-        
+
         if (entry.entryType === 'largest-contentful-paint') {
           console.log('LCP:', entry.startTime);
         }
@@ -26,7 +29,9 @@ export const usePerformanceMonitor = () => {
 
     // Observe different performance metrics
     try {
-      observer.observe({ entryTypes: ['navigation', 'paint', 'largest-contentful-paint'] });
+      observer.observe({
+        entryTypes: ['navigation', 'paint', 'largest-contentful-paint'],
+      });
     } catch (e) {
       // Fallback for browsers that don't support all entry types
       console.log('Performance monitoring not fully supported');
@@ -34,10 +39,7 @@ export const usePerformanceMonitor = () => {
 
     // Preload critical resources
     const preloadCriticalResources = () => {
-      const criticalImages = [
-        '/hero-globe.jpg',
-        '/placeholder.svg'
-      ];
+      const criticalImages = ['/hero-globe.jpg', '/placeholder.svg'];
 
       criticalImages.forEach(src => {
         const link = document.createElement('link');
@@ -51,23 +53,26 @@ export const usePerformanceMonitor = () => {
     // Optimize images with intersection observer
     const optimizeImages = () => {
       const images = document.querySelectorAll('img[loading="lazy"]');
-      
+
       if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              const img = entry.target as HTMLImageElement;
-              if (img.dataset.src) {
-                img.src = img.dataset.src;
-                img.removeAttribute('data-src');
+        const imageObserver = new IntersectionObserver(
+          entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const img = entry.target as HTMLImageElement;
+                if (img.dataset.src) {
+                  img.src = img.dataset.src;
+                  img.removeAttribute('data-src');
+                }
+                imageObserver.unobserve(img);
               }
-              imageObserver.unobserve(img);
-            }
-          });
-        }, {
-          threshold: 0.1,
-          rootMargin: '50px'
-        });
+            });
+          },
+          {
+            threshold: 0.1,
+            rootMargin: '50px',
+          }
+        );
 
         images.forEach(img => imageObserver.observe(img));
       }
