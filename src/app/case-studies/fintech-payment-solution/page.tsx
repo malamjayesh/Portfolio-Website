@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { ArrowRight, CheckCircle, ExternalLink } from "lucide-react";
-import Link from "next/link";
-import { motion } from "framer-motion";
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { ArrowRight, CheckCircle, ExternalLink } from 'lucide-react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 export default function FinTechPaymentSolution() {
   return (
@@ -21,12 +21,15 @@ export default function FinTechPaymentSolution() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <Badge variant="outline" className="mb-4">FinTech Solution</Badge>
+              <Badge variant="outline" className="mb-4">
+                FinTech Solution
+              </Badge>
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
                 Secure Payment Processing Platform
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-                Enterprise-grade payment solution with multi-currency support and advanced fraud detection
+                Enterprise-grade payment solution with multi-currency support
+                and advanced fraud detection
               </p>
             </motion.div>
           </div>
@@ -44,8 +47,10 @@ export default function FinTechPaymentSolution() {
               >
                 <h2 className="text-4xl font-bold mb-6">Project Overview</h2>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  We developed a comprehensive payment processing platform that handles multi-currency transactions 
-                  with advanced fraud detection capabilities. The solution processes over $50M annually with 99.9% uptime.
+                  We developed a comprehensive payment processing platform that
+                  handles multi-currency transactions with advanced fraud
+                  detection capabilities. The solution processes over $50M
+                  annually with 99.9% uptime.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
@@ -66,7 +71,7 @@ export default function FinTechPaymentSolution() {
                   </div>
                 </div>
               </motion.div>
-              
+
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -77,16 +82,26 @@ export default function FinTechPaymentSolution() {
                 <h3 className="text-2xl font-bold mb-6">Key Results</h3>
                 <div className="space-y-6">
                   <div>
-                    <div className="text-3xl font-bold text-primary mb-2">99.9%</div>
+                    <div className="text-3xl font-bold text-primary mb-2">
+                      99.9%
+                    </div>
                     <div className="text-muted-foreground">System Uptime</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-primary mb-2">$50M+</div>
-                    <div className="text-muted-foreground">Transactions Processed</div>
+                    <div className="text-3xl font-bold text-primary mb-2">
+                      $50M+
+                    </div>
+                    <div className="text-muted-foreground">
+                      Transactions Processed
+                    </div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-primary mb-2">0</div>
-                    <div className="text-muted-foreground">Security Breaches</div>
+                    <div className="text-3xl font-bold text-primary mb-2">
+                      0
+                    </div>
+                    <div className="text-muted-foreground">
+                      Security Breaches
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -106,16 +121,17 @@ export default function FinTechPaymentSolution() {
             >
               <h2 className="text-4xl font-bold mb-6">Technology Stack</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Built with modern, scalable technologies for enterprise performance
+                Built with modern, scalable technologies for enterprise
+                performance
               </p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { name: "Next.js", category: "Frontend Framework" },
-                { name: "PostgreSQL", category: "Database" },
-                { name: "Docker", category: "Containerization" },
-                { name: "Stripe", category: "Payment Gateway" }
+                { name: 'Next.js', category: 'Frontend Framework' },
+                { name: 'PostgreSQL', category: 'Database' },
+                { name: 'Docker', category: 'Containerization' },
+                { name: 'Stripe', category: 'Payment Gateway' },
               ].map((tech, index) => (
                 <motion.div
                   key={tech.name}
@@ -126,7 +142,9 @@ export default function FinTechPaymentSolution() {
                   className="bg-card border border-border rounded-2xl p-6 text-center"
                 >
                   <h3 className="text-xl font-bold mb-2">{tech.name}</h3>
-                  <p className="text-sm text-muted-foreground">{tech.category}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {tech.category}
+                  </p>
                 </motion.div>
               ))}
             </div>
@@ -136,7 +154,9 @@ export default function FinTechPaymentSolution() {
         {/* CTA Section */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-6 text-center">
-            <h2 className="text-4xl font-bold mb-6">Ready to Build Your Solution?</h2>
+            <h2 className="text-4xl font-bold mb-6">
+              Ready to Build Your Solution?
+            </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Let's discuss how we can help you create a similar success story
             </p>

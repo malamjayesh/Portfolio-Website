@@ -1,60 +1,79 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Checkbox } from "@/components/ui/checkbox";
-import { motion } from "framer-motion";
-import { Upload, Send, CheckCircle, ArrowLeft, ArrowRight, User, Briefcase, FileText, Shield } from "lucide-react";
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Checkbox } from '@/components/ui/checkbox';
+import { motion } from 'framer-motion';
+import {
+  Upload,
+  Send,
+  CheckCircle,
+  ArrowLeft,
+  ArrowRight,
+  User,
+  Briefcase,
+  FileText,
+  Shield,
+} from 'lucide-react';
 
 interface JobApplicationFormProps {
   jobTitle: string;
   department: string;
 }
 
-export default function JobApplicationForm({ jobTitle, department }: JobApplicationFormProps) {
+export default function JobApplicationForm({
+  jobTitle,
+  department,
+}: JobApplicationFormProps) {
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     // Personal Info
-    fullName: "",
-    email: "",
-    phone: "",
-    address: "",
-    linkedin: "",
+    fullName: '',
+    email: '',
+    phone: '',
+    address: '',
+    linkedin: '',
     // Professional Info
-    experience: "",
-    currentCompany: "",
-    currentRole: "",
-    currentSalary: "",
-    expectedSalary: "",
-    noticePeriod: "",
+    experience: '',
+    currentCompany: '',
+    currentRole: '',
+    currentSalary: '',
+    expectedSalary: '',
+    noticePeriod: '',
     skills: [] as string[],
     // Documents & Additional
-    portfolio: "",
-    coverLetter: "",
+    portfolio: '',
+    coverLetter: '',
     resume: null as File | null,
     // Preferences
-    workPreference: "",
-    startDate: "",
+    workPreference: '',
+    startDate: '',
     relocation: false,
     // Agreements
     termsAccepted: false,
-    dataProcessing: false
+    dataProcessing: false,
   });
 
   const totalSteps = 4;
-  
+
   const steps = [
-    { number: 1, title: "Personal Info", icon: User },
-    { number: 2, title: "Professional", icon: Briefcase },
-    { number: 3, title: "Documents", icon: FileText },
-    { number: 4, title: "Preferences", icon: Shield }
+    { number: 1, title: 'Personal Info', icon: User },
+    { number: 2, title: 'Professional', icon: Briefcase },
+    { number: 3, title: 'Documents', icon: FileText },
+    { number: 4, title: 'Preferences', icon: Shield },
   ];
 
   const handleNext = () => {
@@ -86,7 +105,10 @@ export default function JobApplicationForm({ jobTitle, department }: JobApplicat
   };
 
   const removeSkill = (skill: string) => {
-    setFormData({ ...formData, skills: formData.skills.filter(s => s !== skill) });
+    setFormData({
+      ...formData,
+      skills: formData.skills.filter(s => s !== skill),
+    });
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -105,7 +127,8 @@ export default function JobApplicationForm({ jobTitle, department }: JobApplicat
         <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-6" />
         <h3 className="text-2xl font-bold mb-4">Application Submitted!</h3>
         <p className="text-muted-foreground mb-6">
-          Thank you for applying for the {jobTitle} position. We'll review your application and get back to you within 24-48 hours.
+          Thank you for applying for the {jobTitle} position. We'll review your
+          application and get back to you within 24-48 hours.
         </p>
         <Button onClick={() => setIsSubmitted(false)} variant="outline">
           Submit Another Application
@@ -126,7 +149,9 @@ export default function JobApplicationForm({ jobTitle, department }: JobApplicat
                   id="fullName"
                   required
                   value={formData.fullName}
-                  onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                  onChange={e =>
+                    setFormData({ ...formData, fullName: e.target.value })
+                  }
                   placeholder="Enter your full name"
                 />
               </div>
@@ -137,7 +162,9 @@ export default function JobApplicationForm({ jobTitle, department }: JobApplicat
                   type="email"
                   required
                   value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  onChange={e =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -149,7 +176,9 @@ export default function JobApplicationForm({ jobTitle, department }: JobApplicat
                   id="phone"
                   required
                   value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  onChange={e =>
+                    setFormData({ ...formData, phone: e.target.value })
+                  }
                   placeholder="+91 9876543210"
                 />
               </div>
@@ -158,7 +187,9 @@ export default function JobApplicationForm({ jobTitle, department }: JobApplicat
                 <Input
                   id="linkedin"
                   value={formData.linkedin}
-                  onChange={(e) => setFormData({ ...formData, linkedin: e.target.value })}
+                  onChange={e =>
+                    setFormData({ ...formData, linkedin: e.target.value })
+                  }
                   placeholder="https://linkedin.com/in/yourprofile"
                 />
               </div>
@@ -168,21 +199,27 @@ export default function JobApplicationForm({ jobTitle, department }: JobApplicat
               <Textarea
                 id="address"
                 value={formData.address}
-                onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+                onChange={e =>
+                  setFormData({ ...formData, address: e.target.value })
+                }
                 placeholder="Enter your current address"
                 rows={2}
               />
             </div>
           </div>
         );
-      
+
       case 2:
         return (
           <div className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="experience">Total Experience *</Label>
-                <Select onValueChange={(value) => setFormData({ ...formData, experience: value })}>
+                <Select
+                  onValueChange={value =>
+                    setFormData({ ...formData, experience: value })
+                  }
+                >
                   <SelectTrigger>
                     <SelectValue placeholder="Select experience" />
                   </SelectTrigger>
@@ -200,7 +237,9 @@ export default function JobApplicationForm({ jobTitle, department }: JobApplicat
                 <Input
                   id="currentCompany"
                   value={formData.currentCompany}
-                  onChange={(e) => setFormData({ ...formData, currentCompany: e.target.value })}
+                  onChange={e =>
+                    setFormData({ ...formData, currentCompany: e.target.value })
+                  }
                   placeholder="Your current company"
                 />
               </div>
@@ -210,7 +249,9 @@ export default function JobApplicationForm({ jobTitle, department }: JobApplicat
               <Input
                 id="currentRole"
                 value={formData.currentRole}
-                onChange={(e) => setFormData({ ...formData, currentRole: e.target.value })}
+                onChange={e =>
+                  setFormData({ ...formData, currentRole: e.target.value })
+                }
                 placeholder="Your current job title"
               />
             </div>
@@ -220,7 +261,9 @@ export default function JobApplicationForm({ jobTitle, department }: JobApplicat
                 <Input
                   id="currentSalary"
                   value={formData.currentSalary}
-                  onChange={(e) => setFormData({ ...formData, currentSalary: e.target.value })}
+                  onChange={e =>
+                    setFormData({ ...formData, currentSalary: e.target.value })
+                  }
                   placeholder="e.g., 8"
                 />
               </div>
@@ -230,13 +273,19 @@ export default function JobApplicationForm({ jobTitle, department }: JobApplicat
                   id="expectedSalary"
                   required
                   value={formData.expectedSalary}
-                  onChange={(e) => setFormData({ ...formData, expectedSalary: e.target.value })}
+                  onChange={e =>
+                    setFormData({ ...formData, expectedSalary: e.target.value })
+                  }
                   placeholder="e.g., 12"
                 />
               </div>
               <div>
                 <Label htmlFor="noticePeriod">Notice Period</Label>
-                <Select onValueChange={(value) => setFormData({ ...formData, noticePeriod: value })}>
+                <Select
+                  onValueChange={value =>
+                    setFormData({ ...formData, noticePeriod: value })
+                  }
+                >
                   <SelectTrigger>
                     <SelectValue placeholder="Select notice period" />
                   </SelectTrigger>
@@ -252,7 +301,7 @@ export default function JobApplicationForm({ jobTitle, department }: JobApplicat
             </div>
           </div>
         );
-      
+
       case 3:
         return (
           <div className="space-y-6">
@@ -263,9 +312,13 @@ export default function JobApplicationForm({ jobTitle, department }: JobApplicat
                   <div className="flex flex-col items-center justify-center pt-5 pb-6">
                     <Upload className="w-8 h-8 mb-2 text-muted-foreground" />
                     <p className="mb-2 text-sm text-muted-foreground">
-                      {formData.resume ? formData.resume.name : "Click to upload resume"}
+                      {formData.resume
+                        ? formData.resume.name
+                        : 'Click to upload resume'}
                     </p>
-                    <p className="text-xs text-muted-foreground">PDF, DOC, DOCX (MAX. 5MB)</p>
+                    <p className="text-xs text-muted-foreground">
+                      PDF, DOC, DOCX (MAX. 5MB)
+                    </p>
                   </div>
                   <input
                     type="file"
@@ -282,7 +335,9 @@ export default function JobApplicationForm({ jobTitle, department }: JobApplicat
               <Input
                 id="portfolio"
                 value={formData.portfolio}
-                onChange={(e) => setFormData({ ...formData, portfolio: e.target.value })}
+                onChange={e =>
+                  setFormData({ ...formData, portfolio: e.target.value })
+                }
                 placeholder="https://github.com/yourusername or portfolio link"
               />
             </div>
@@ -291,21 +346,27 @@ export default function JobApplicationForm({ jobTitle, department }: JobApplicat
               <Textarea
                 id="coverLetter"
                 value={formData.coverLetter}
-                onChange={(e) => setFormData({ ...formData, coverLetter: e.target.value })}
+                onChange={e =>
+                  setFormData({ ...formData, coverLetter: e.target.value })
+                }
                 placeholder="Tell us why you're interested in this position and what makes you a great fit..."
                 rows={4}
               />
             </div>
           </div>
         );
-      
+
       case 4:
         return (
           <div className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="workPreference">Work Preference</Label>
-                <Select onValueChange={(value) => setFormData({ ...formData, workPreference: value })}>
+                <Select
+                  onValueChange={value =>
+                    setFormData({ ...formData, workPreference: value })
+                  }
+                >
                   <SelectTrigger>
                     <SelectValue placeholder="Select preference" />
                   </SelectTrigger>
@@ -322,48 +383,63 @@ export default function JobApplicationForm({ jobTitle, department }: JobApplicat
                   id="startDate"
                   type="date"
                   value={formData.startDate}
-                  onChange={(e) => setFormData({ ...formData, startDate: e.target.value })}
+                  onChange={e =>
+                    setFormData({ ...formData, startDate: e.target.value })
+                  }
                 />
               </div>
             </div>
-            
+
             <div className="flex items-center space-x-2">
-              <Checkbox 
+              <Checkbox
                 id="relocation"
                 checked={formData.relocation}
-                onCheckedChange={(checked) => setFormData({ ...formData, relocation: checked as boolean })}
+                onCheckedChange={checked =>
+                  setFormData({ ...formData, relocation: checked as boolean })
+                }
               />
               <Label htmlFor="relocation">I am open to relocation</Label>
             </div>
-            
+
             <div className="space-y-4 border-t pt-6">
               <div className="flex items-center space-x-2">
-                <Checkbox 
+                <Checkbox
                   id="terms"
                   checked={formData.termsAccepted}
-                  onCheckedChange={(checked) => setFormData({ ...formData, termsAccepted: checked as boolean })}
+                  onCheckedChange={checked =>
+                    setFormData({
+                      ...formData,
+                      termsAccepted: checked as boolean,
+                    })
+                  }
                   required
                 />
                 <Label htmlFor="terms" className="text-sm">
                   I agree to the terms and conditions and privacy policy *
                 </Label>
               </div>
-              
+
               <div className="flex items-center space-x-2">
-                <Checkbox 
+                <Checkbox
                   id="dataProcessing"
                   checked={formData.dataProcessing}
-                  onCheckedChange={(checked) => setFormData({ ...formData, dataProcessing: checked as boolean })}
+                  onCheckedChange={checked =>
+                    setFormData({
+                      ...formData,
+                      dataProcessing: checked as boolean,
+                    })
+                  }
                   required
                 />
                 <Label htmlFor="dataProcessing" className="text-sm">
-                  I consent to the processing of my personal data for recruitment purposes *
+                  I consent to the processing of my personal data for
+                  recruitment purposes *
                 </Label>
               </div>
             </div>
           </div>
         );
-      
+
       default:
         return null;
     }
@@ -381,55 +457,63 @@ export default function JobApplicationForm({ jobTitle, department }: JobApplicat
             Step {currentStep} of {totalSteps}
           </div>
         </CardTitle>
-        
+
         {/* Progress Steps */}
         <div className="flex items-center justify-between mt-6">
-          {steps.map((step) => {
+          {steps.map(step => {
             const Icon = step.icon;
             return (
               <div key={step.number} className="flex items-center">
-                <div className={`flex items-center justify-center w-10 h-10 rounded-full border-2 ${
-                  currentStep >= step.number 
-                    ? 'bg-primary border-primary text-primary-foreground' 
-                    : 'border-muted-foreground text-muted-foreground'
-                }`}>
+                <div
+                  className={`flex items-center justify-center w-10 h-10 rounded-full border-2 ${
+                    currentStep >= step.number
+                      ? 'bg-primary border-primary text-primary-foreground'
+                      : 'border-muted-foreground text-muted-foreground'
+                  }`}
+                >
                   <Icon className="h-4 w-4" />
                 </div>
                 <div className="ml-2 hidden sm:block">
-                  <div className={`text-sm font-medium ${
-                    currentStep >= step.number ? 'text-primary' : 'text-muted-foreground'
-                  }`}>
+                  <div
+                    className={`text-sm font-medium ${
+                      currentStep >= step.number
+                        ? 'text-primary'
+                        : 'text-muted-foreground'
+                    }`}
+                  >
                     {step.title}
                   </div>
                 </div>
                 {step.number < totalSteps && (
-                  <div className={`w-12 h-0.5 mx-4 ${
-                    currentStep > step.number ? 'bg-primary' : 'bg-muted'
-                  }`} />
+                  <div
+                    className={`w-12 h-0.5 mx-4 ${
+                      currentStep > step.number ? 'bg-primary' : 'bg-muted'
+                    }`}
+                  />
                 )}
               </div>
             );
           })}
         </div>
       </CardHeader>
-      
+
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-6">
           {renderStepContent()}
-          
+
           <div className="flex justify-between pt-6">
-            <Button 
-              type="button" 
-              variant="outline" 
+            <Button
+              type="button"
+              variant="outline"
               onClick={handlePrevious}
               disabled={currentStep === 1}
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
               Previous
             </Button>
-            
-            <Button 
-              type="submit" 
+
+            <Button
+              type="submit"
               className="bg-gradient-primary hover:shadow-glow transition-all duration-300"
             >
               {currentStep === totalSteps ? (

@@ -1,31 +1,31 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
 const TechStack = () => {
   const techCategories = [
     {
-      category: "Frontend",
-      technologies: ["React.js", "Next.js", "TypeScript", "Tailwind CSS"]
+      category: 'Frontend',
+      technologies: ['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS'],
     },
     {
-      category: "Backend",
-      technologies: ["Node.js", "GraphQL", "Docker", "REST APIs"]
+      category: 'Backend',
+      technologies: ['Node.js', 'GraphQL', 'Docker', 'REST APIs'],
     },
     {
-      category: "Database",
-      technologies: ["MongoDB", "PostgreSQL", "Redis", "Firebase"]
+      category: 'Database',
+      technologies: ['MongoDB', 'PostgreSQL', 'Redis', 'Firebase'],
     },
     {
-      category: "Cloud & Tools",
-      technologies: ["AWS", "Firebase", "Redux", "Git"]
-    }
+      category: 'Cloud & Tools',
+      technologies: ['AWS', 'Firebase', 'Redux', 'Git'],
+    },
   ];
 
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -51,7 +51,9 @@ const TechStack = () => {
               whileHover={{ scale: 1.05, y: -5 }}
               className="bg-card border border-border rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:shadow-card transition-all duration-300"
             >
-              <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-primary">{category.category}</h3>
+              <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-primary">
+                {category.category}
+              </h3>
               <ul className="space-y-2">
                 {category.technologies.map((tech, techIndex) => (
                   <motion.li
@@ -59,7 +61,10 @@ const TechStack = () => {
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: index * 0.1 + techIndex * 0.05 }}
+                    transition={{
+                      duration: 0.3,
+                      delay: index * 0.1 + techIndex * 0.05,
+                    }}
                     className="text-sm sm:text-base text-muted-foreground flex items-center"
                   >
                     <span className="w-2 h-2 rounded-full bg-accent mr-3"></span>
@@ -71,7 +76,7 @@ const TechStack = () => {
           ))}
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -79,7 +84,8 @@ const TechStack = () => {
           className="text-center mt-8 sm:mt-10 md:mt-12"
         >
           <p className="text-sm sm:text-base text-muted-foreground px-4">
-            And many more modern tools and frameworks to deliver the best solutions
+            And many more modern tools and frameworks to deliver the best
+            solutions
           </p>
         </motion.div>
       </div>

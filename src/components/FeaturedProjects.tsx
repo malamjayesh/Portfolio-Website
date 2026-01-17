@@ -1,43 +1,49 @@
-"use client";
+'use client';
 
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
-import Image from "next/image";
-import { motion } from "framer-motion";
+import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const FeaturedProjects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform Redesign",
-      category: "Web Development",
-      slug: "ecommerce-platform",
-      description: "Complete redesign and development of a high-traffic e-commerce platform with 300% increase in conversions",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
-      href: "/case-studies/ecommerce-platform"
+      title: 'E-Commerce Platform Redesign',
+      category: 'Web Development',
+      slug: 'ecommerce-platform',
+      description:
+        'Complete redesign and development of a high-traffic e-commerce platform with 300% increase in conversions',
+      image:
+        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop',
+      href: '/case-studies/ecommerce-platform',
     },
     {
-      title: "Health & Fitness Mobile App",
-      category: "Mobile Development",
-      slug: "health-fitness-app",
-      description: "Cross-platform fitness app with workout tracking, meal planning, and social features with 100K+ downloads",
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=500&h=300&fit=crop",
-      href: "/case-studies/health-fitness-app"
+      title: 'Health & Fitness Mobile App',
+      category: 'Mobile Development',
+      slug: 'health-fitness-app',
+      description:
+        'Cross-platform fitness app with workout tracking, meal planning, and social features with 100K+ downloads',
+      image:
+        'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=500&h=300&fit=crop',
+      href: '/case-studies/health-fitness-app',
     },
     {
-      title: "Financial Analytics Dashboard",
-      category: "UI/UX Design",
-      slug: "financial-dashboard",
-      description: "Real-time analytics platform for FinTech startup that improved decision-making speed by 65%",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=500&h=300&fit=crop",
-      href: "/case-studies/financial-dashboard"
+      title: 'Financial Analytics Dashboard',
+      category: 'UI/UX Design',
+      slug: 'financial-dashboard',
+      description:
+        'Real-time analytics platform for FinTech startup that improved decision-making speed by 65%',
+      image:
+        'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=500&h=300&fit=crop',
+      href: '/case-studies/financial-dashboard',
     },
   ];
 
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-secondary/30">
       <div className="container mx-auto px-4 sm:px-6">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -64,8 +70,8 @@ const FeaturedProjects = () => {
               className="group bg-card border border-border rounded-xl sm:rounded-2xl overflow-hidden hover:shadow-card transition-all duration-300"
             >
               <div className="h-40 sm:h-44 md:h-48 overflow-hidden bg-gradient-to-br from-primary/10 to-accent/10">
-                <Image 
-                  src={project.image} 
+                <Image
+                  src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover"
                   width={500}
@@ -73,9 +79,15 @@ const FeaturedProjects = () => {
                 />
               </div>
               <div className="p-4 sm:p-5 md:p-6">
-                <div className="text-xs sm:text-sm text-accent mb-2">{project.category}</div>
-                <div className="text-xs text-muted-foreground mb-2 sm:mb-3 font-mono">/{project.slug}</div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">{project.title}</h3>
+                <div className="text-xs sm:text-sm text-accent mb-2">
+                  {project.category}
+                </div>
+                <div className="text-xs text-muted-foreground mb-2 sm:mb-3 font-mono">
+                  /{project.slug}
+                </div>
+                <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">
+                  {project.title}
+                </h3>
                 <p className="text-muted-foreground mb-3 sm:mb-4 leading-relaxed text-xs sm:text-sm">
                   {project.description}
                 </p>
@@ -90,7 +102,7 @@ const FeaturedProjects = () => {
           ))}
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

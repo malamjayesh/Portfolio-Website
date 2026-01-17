@@ -1,36 +1,40 @@
-"use client";
+'use client';
 
-import { Zap, Eye, DollarSign, Headphones } from "lucide-react";
-import { motion } from "framer-motion";
+import { Zap, Eye, DollarSign, Headphones } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const WhyChooseUs = () => {
   const reasons = [
     {
       icon: Zap,
-      title: "Delivery Discipline",
-      description: "Weekly demos, clear sprint goals and a single roadmap everyone understands."
+      title: 'Delivery Discipline',
+      description:
+        'Weekly demos, clear sprint goals and a single roadmap everyone understands.',
     },
     {
       icon: Eye,
-      title: "Outcome Orientation",
-      description: "We don't ship features — we ship measurable business outcomes."
+      title: 'Outcome Orientation',
+      description:
+        "We don't ship features — we ship measurable business outcomes.",
     },
     {
       icon: DollarSign,
-      title: "Tech Maturity",
-      description: "Modern stacks + automated tests = lower maintenance and faster iteration."
+      title: 'Tech Maturity',
+      description:
+        'Modern stacks + automated tests = lower maintenance and faster iteration.',
     },
     {
       icon: Headphones,
-      title: "Full-Stack Partner",
-      description: "Design → Engineering → Growth → Support. End-to-end product delivery."
-    }
+      title: 'Full-Stack Partner',
+      description:
+        'Design → Engineering → Growth → Support. End-to-end product delivery.',
+    },
   ];
 
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-secondary/30">
       <div className="container mx-auto px-4 sm:px-6">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -58,7 +62,7 @@ const WhyChooseUs = () => {
                 whileHover={{ scale: 1.08, y: -5 }}
                 className="bg-card border border-border rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover:shadow-card transition-all duration-300 text-center"
               >
-                <motion.div 
+                <motion.div
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
@@ -67,7 +71,9 @@ const WhyChooseUs = () => {
                 >
                   <Icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-primary" />
                 </motion.div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">{reason.title}</h3>
+                <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">
+                  {reason.title}
+                </h3>
                 <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
                   {reason.description}
                 </p>
